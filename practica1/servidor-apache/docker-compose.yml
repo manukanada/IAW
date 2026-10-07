@@ -1,0 +1,10 @@
+services:
+  apache:
+    build: ./apache
+    container_name: servidor-apache
+    ports:
+      - "8055:80"
+    volumes:
+      - ./web/catlynx:/var/www/catlynx
+      - ./web/nodisknobuy:/var/www/nodisknobuy
+    restart: unless-stopped
