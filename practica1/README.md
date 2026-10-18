@@ -5,7 +5,9 @@ El primer dominio se llamará catlynx porque lynx es el nombre de mi gato y
 el segundo se llamará nodisknobuy porque hace referencia a la protesta de la
 eliminación del formato físico por parte de PlayStation.
 El MPM más recomendado es event porque además de trabajar con procesos e 
-hilos como worker, incluye la gestión de conexiones inactivas a hilos dedicados.
+hilos como worker, incluye la gestión de conexiones inactivas a hilos dedicados
+esto lo hace más eficiente y recomendado en producción moderna y por eso también
+es el que viene activado por defecto.
 
 #2. Estructura del proyecto
 
@@ -200,3 +202,41 @@ Es el código que utiliza Nginx por defecto cuando se supera este límite.
 Con estas pruebas hemos comprobado que la configuración permite
 el uso normal de la web y rechaza muchas peticiones cuando se
 envían demasiado rápido.
+
+#FASE 3: Diagnóstico y soluciones
+
+#PROBLEMA 1: Fallo en la protección de un archivo de Apache
+
+#Síntoma observado:
+El archivo physical-release.info devuelve 200 OK en lugar de 403 Forbidden.
+
+#Hipótesis inicial:
+La protección del archivo en el VirtualHost de Apache podría estar mal configurada.
+
+#Comando de diagnóstico usado:
+curl -k -I --resolve nodisknobuy.local:8443:127.0.0.1 https://nodisknobuy.local:8443/physical-release.info
+
+#Causa real y solución:
+Se cambió Require all denied por Require all granted, permitiendo el acceso al
+archivo. Se restauró Require all denied,
+se reconstruyó el contenedor con docker compose up -d --build apache y
+se comprobó que el archivo volvía a devolver 403 Forbidden.
+
+
+#PROBLEMA 2: Fallo en el límite de peticiones de Nginx
+
+#Síntoma observado:
+Nginx acepta peticiones rápidas sin aplicar el límite de solicitudes configurado.
+
+#Hipótesis inicial:
+La limitación de peticiones podría no estar aplicada al servidor HTTPS.
+
+#Comando de diagnóstico usado:
+Se enviaron 30 peticiones rápidas mediante un bucle for con curl, comprobando los
+códigos HTTP devueltos.
+
+#Causa real y solución:
+Se comentó la directiva limit_req zone=nimbus_limit burst=6 nodelay;, por lo que Nginx
+dejó de aplicar el límite. Se restauró la directiva, se comprobó la sintaxis 
+con docker compose exec nginx nginx -t y se recargó la configuración con
+docker compose exec nginx nginx -s reload.
