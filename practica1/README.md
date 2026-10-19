@@ -276,27 +276,6 @@ Esto ayuda a que los usuarios accedan a la versión segura de la web.
 En nuestro proyecto, Nginx utiliza el puerto 80 para HTTP y el
 puerto 8443 del ordenador para HTTPS.
 
-
-### 2. Redirección de HTTP a HTTPS
-
-Hemos configurado Nginx para redirigir automáticamente las peticiones HTTP al mismo dominio mediante HTTPS:
-
-```nginx
-server {
-    listen 80;
-    server_name catlynx.local www.catlynx.local
-                nodisknobuy.local www.nodisknobuy.local;
-
-    return 301 https://$host$request_uri;
-}
-```
-
-Utilizamos el código HTTP 301 porque indica que el recurso se ha trasladado permanentemente a otra dirección. Además, conserva el dominio y la ruta solicitados.
-
-No utilizamos el código 302 porque indica una redirección temporal, mientras que en nuestro proyecto queremos que el acceso se realice siempre mediante HTTPS.
-
-En el ordenador utilizamos el puerto 80 para HTTP y el puerto 8443 para HTTPS. Dentro del contenedor de Nginx, HTTPS escucha en el puerto 443.
-
 ### 3. Reenvío de peticiones a Apache
 
 Nginx actúa como proxy inverso y reenvía las peticiones al servidor Apache mediante:
@@ -393,7 +372,7 @@ y seleccionaba el VirtualHost predeterminado.
 Después de añadir la instrucción, Apache pudo identificar el
 dominio correctamente y CatLynx respondió con el código 200 OK.
 
-## 5. Cabeceras de seguridad
+## 6. Cabeceras de seguridad
 
 Hemos añadido tres cabeceras de seguridad en Nginx.
 
@@ -415,7 +394,7 @@ página, ayudando a prevenir ataques de clickjacking.
 Hemos comprobado que las tres cabeceras aparecen en las respuestas
 HTTPS de nuestro servidor.
 
-## 6. Limitación de peticiones
+## 7. Limitación de peticiones
 
 Hemos configurado un límite de peticiones en Nginx para reducir
 el impacto de clientes que realizan demasiadas solicitudes.
