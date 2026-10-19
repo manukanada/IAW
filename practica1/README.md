@@ -10,7 +10,6 @@ esto lo hace más eficiente y recomendado en producción moderna, por eso tambi�
 es el que viene activado por defecto.
 
 #2. Estructura del proyecto
-
 La estructura del servidor-apache es:
 
 servidor-apache/
