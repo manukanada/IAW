@@ -4,9 +4,9 @@
 El primer dominio se llamará catlynx porque lynx es el nombre de mi gato y
 el segundo se llamará nodisknobuy porque hace referencia a la protesta de la
 eliminación del formato físico por parte de PlayStation.
-El MPM más recomendado es event porque además de trabajar con procesos e 
+El MPM que he elegido para este proyecto es event porque, además de trabajar con procesos e 
 hilos como worker, incluye la gestión de conexiones inactivas a hilos dedicados
-esto lo hace más eficiente y recomendado en producción moderna y por eso también
+esto lo hace más eficiente y recomendado en producción moderna, por eso también
 es el que viene activado por defecto.
 
 #2. Estructura del proyecto
@@ -47,7 +47,9 @@ El archivo docker-compose.yml utiliza el puerto 8055 del equipo y lo conecta con
           - ./web/nodisknobuy:/var/www/nodisknobuy:ro
         restart: unless-stopped
 
-Los directorios de las páginas web se montan como volúmenes de solo lectura. Esto permite modificar los archivos de la página desde el equipo sin tener que reconstruir la imagen de Docker.
+Los directorios de las páginas web se montan como volúmenes de solo lectura. Esto permite modificar los 
+archivos de la página desde el equipo sin tener que reconstruir la imagen de Docker.
+La opción restart permite al contenedor reiniciarse si se detiene.
 
 #4. Dockerfile
 Se ha utilizado Ubuntu 24.04 como imagen base y se ha instalado Apache2.
@@ -65,6 +67,10 @@ Se ha utilizado Ubuntu 24.04 como imagen base y se ha instalado Apache2.
 
     CMD ["apachectl", "-D", "FOREGROUND"]
 
+La línea COPY, copia las configuraciones de los Virtual Host al contenedor,
+a2dissite desactiva el sitio predeterminado original de Apache y
+a2ensite habilita los tres Virtual Hosts del proyecto.
+CMD iniciar apache en primer plano para que Docker pueda controlar el proceso.
 
 # Fase 2: HTTPS y seguridad con Nginx
 ## 1. Certificado HTTPS
