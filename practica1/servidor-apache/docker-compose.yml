@@ -1,0 +1,24 @@
+services:
+  apache:
+    build: ./apache
+    container_name: servidor-apache
+    expose:
+      - "80"
+    volumes:
+      - ./web/catlynx:/var/www/catlynx:ro
+      - ./web/nodisknobuy:/var/www/nodisknobuy:ro
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    container_name: servidor-nginx
+    ports:
+      - "80:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - apache
+    restart: unless-stopped
