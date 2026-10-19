@@ -1,6 +1,6 @@
 #Practica 1
 #FASE 1: Diseño del servidor apache
-#1. Diseño y Requisitos
+## 1. Diseño y Requisitos
 El primer dominio se llamará catlynx porque lynx es el nombre de mi gato y
 el segundo se llamará nodisknobuy porque hace referencia a la protesta de la
 eliminación del formato físico por parte de PlayStation.
@@ -9,7 +9,7 @@ hilos como worker, incluye la gestión de conexiones inactivas a hilos dedicados
 esto lo hace más eficiente y recomendado en producción moderna, por eso también
 es el que viene activado por defecto.
 
-#2. Estructura del proyecto
+## 2. Estructura del proyecto
 La estructura del servidor-apache es:
 
 servidor-apache/
@@ -30,7 +30,7 @@ servidor-apache/
 └── README.md
 
 
-#3. Dockerfile
+## 3. Dockerfile
 He utilizado Docker Compose para ejecutar Apache dentro de un contenedor.
 Para eso antes creamos el dockerfile de apache.
 Se ha utilizado Ubuntu 24.04 como imagen base y se ha instalado Apache2.
@@ -53,7 +53,7 @@ a2dissite desactiva el sitio predeterminado original de Apache y
 a2ensite habilita los tres Virtual Hosts del proyecto.
 CMD iniciar apache en primer plano para que Docker pueda controlar el proceso.
 
-#4. Creación del Docker-Compose
+## 4. Creación del Docker-Compose
 
 El archivo docker-compose.yml utiliza el puerto 8055 del equipo y lo conecta con el 
 puerto 80 del contenedor:
@@ -276,7 +276,7 @@ Esto ayuda a que los usuarios accedan a la versión segura de la web.
 En nuestro proyecto, Nginx utiliza el puerto 80 para HTTP y el
 puerto 8443 del ordenador para HTTPS.
 
-### 3. Reenvío de peticiones a Apache
+## 3. Reenvío de peticiones a Apache
 
 Nginx actúa como proxy inverso y reenvía las peticiones al servidor Apache mediante:
 
@@ -446,7 +446,7 @@ envían demasiado rápido.
 
 #FASE 3: Diagnóstico y soluciones
 
-#PROBLEMA 1: Fallo en la protección de un archivo de Apache
+## PROBLEMA 1: Fallo en la protección de un archivo de Apache
 
 #Síntoma observado:
 El archivo physical-release.info devuelve 200 OK en lugar de 403 Forbidden.
@@ -464,7 +464,7 @@ se reconstruyó el contenedor con docker compose up -d --build apache y
 se comprobó que el archivo volvía a devolver 403 Forbidden.
 
 
-#PROBLEMA 2: Fallo en el límite de peticiones de Nginx
+## PROBLEMA 2: Fallo en el límite de peticiones de Nginx
 
 #Síntoma observado:
 Nginx acepta peticiones rápidas sin aplicar el límite de solicitudes configurado.
