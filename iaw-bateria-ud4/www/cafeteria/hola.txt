@@ -1,0 +1,1 @@
+Soy un fichero estático: me sirve Nginx sin pasar por PHP.

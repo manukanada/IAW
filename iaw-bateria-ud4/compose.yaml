@@ -1,0 +1,53 @@
+name: iaw-bateria-ud4
+
+# Batería UD4 · la cafetería del instituto con Nginx + PHP-FPM
+#   cliente ──HTTPS──▶ nginx ──FastCGI php:9000──▶ php (PHP-FPM 8.3)
+# Puertos del host: 8087 (HTTP) y 8447 (HTTPS). No chocan con los laboratorios (UD4 8083/8445, UD5 8084/8446, P1 8086/8446).
+# No hace falta usar docker compose a mano: ./bateria.sh lo hace por ti.
+
+services:
+  nginx:
+    build: { context: ., dockerfile: Dockerfile.nginx }
+    image: iaw-ud4-nginx
+    container_name: iawb4-nginx
+    command: ["/lab/arranque-nginx.sh"]
+    ports: ["8087:80", "8447:443"]
+    volumes:
+      - ./arranque-nginx.sh:/lab/arranque-nginx.sh:ro
+      - ./nginx/sites-available:/etc/nginx/sites-available
+      - ./www:/var/www
+      - ./certs:/etc/ssl/lab:ro
+      - ./logs:/var/log/nginx
+    networks:
+      lab:
+        aliases: [cafeteria.iaw.local]
+      interna: {}
+    depends_on: [php]
+
+  php:
+    build: { context: ., dockerfile: Dockerfile.php }
+    image: iaw-ud4-php
+    container_name: iawb4-php
+    command: ["/lab/arranque.sh"]
+    environment:
+      PHP_INI_SCAN_DIR: "/usr/local/etc/php/conf.d:/lab/php"   # además de los de la imagen, lee tu php/zz-bateria.ini
+    volumes:
+      - ./arranque-php.sh:/lab/arranque.sh:ro
+      - ./php:/lab/php
+      - ./www:/var/www
+      - ./logs:/var/log/lab
+    mem_limit: 512m
+    cap_add: [SYS_PTRACE]          # para el slowlog
+    networks: [interna]
+
+  cliente:
+    image: alpine:3.20
+    container_name: iawb4-cliente
+    command: sh -c "apk add --no-cache curl >/dev/null && sleep infinity"
+    networks: [lab]
+    depends_on: [nginx]
+
+networks:
+  lab: {}
+  interna:
+    internal: true

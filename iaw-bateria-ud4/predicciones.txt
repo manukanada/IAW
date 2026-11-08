@@ -1,0 +1,11 @@
+# 🔮 Predicciones. Escribe tu respuesta DESPUÉS del «=», ANTES de probarlo.
+# Bloque 1 · ¿qué pasa? Responde: descarga, 404, 502 o 504.
+1.a =
+1.b =
+1.c =
+1.d =
+# Bloque 2 · ¿qué da? Responde: true, false, un número o vacío.
+2.a =
+2.b =
+2.c =
+2.d =
