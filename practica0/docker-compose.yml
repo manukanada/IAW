@@ -1,0 +1,12 @@
+services:
+  web-personalizada:
+    build: .
+    ports:
+      - "8000:80"
+    restart: unless-stopped
+
+  web-oficial:
+    image: httpd:alpine
+    ports:
+      - "8001:80"
+    restart: unless-stopped
