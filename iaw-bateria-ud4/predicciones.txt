@@ -5,7 +5,7 @@
 1.c = 502
 1.d = 504
 # Bloque 2 · ¿qué da? Responde: true, false, un número o vacío.
-2.a =
-2.b =
-2.c =
-2.d =
+2.a =true
+2.b =número
+2.c =false
+2.d =vacío
