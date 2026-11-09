@@ -18,7 +18,10 @@ function euros(float $x): string {
 
 $errores = [];
 $hecho = false;
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' && $_SERVER['REQUEST_METHOD'] !== 'GET') {
+    http_response_code(405);
+    header('Allow: GET, POST');
+    exit('Método no permitido');
     $nombre     = trim($_POST['nombre'] ?? '');
     $plato      = $_POST['plato'] ?? '';
     $comentario = trim($_POST['comentario'] ?? '');
