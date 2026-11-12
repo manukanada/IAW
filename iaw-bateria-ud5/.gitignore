@@ -1,3 +1,4 @@
 logs/*
 !logs/.gitkeep
 __pycache__/
+config/polideportivo.env
