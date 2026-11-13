@@ -1,0 +1,373 @@
+[2026-11-13 12:15:41,944] ERROR in app: Exception on /error [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/polideportivo/app.py", line 168, in error
+    return f"Cada hora libre sale a {len(PISTAS) / horas_libres} pistas"
+                                     ~~~~~~~~~~~~^~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+[2026-11-13 12:41:17 +0000] [1] [INFO] Handling signal: term
+[2026-11-13 12:41:17 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:41:17 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2026-11-13 12:41:17 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2026-11-13 12:41:17 +0000] [14] [INFO] Worker exiting (pid: 14)
+[2026-11-13 12:41:17 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2026-11-13 12:41:17 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2026-11-13 12:41:17 +0000] [15] [INFO] Worker exiting (pid: 15)
+[2026-11-13 12:41:17 +0000] [13] [INFO] Worker exiting (pid: 13)
+[2026-11-13 12:41:17 +0000] [24] [INFO] Worker exiting (pid: 24)
+[2026-11-13 12:41:17 +0000] [1] [INFO] Shutting down: Master
+[2026-11-13 12:41:17 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:41:17 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:41:17 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:41:17 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:41:17 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-11-13 12:41:17 +0000] [11] [INFO] Booting worker with pid: 11
+[2026-11-13 12:41:17 +0000] [12] [INFO] Booting worker with pid: 12
+[2026-11-13 12:41:17 +0000] [13] [INFO] Booting worker with pid: 13
+[2026-11-13 12:41:17 +0000] [14] [INFO] Booting worker with pid: 14
+[2026-11-13 12:41:17 +0000] [15] [INFO] Booting worker with pid: 15
+[2026-11-13 12:41:17 +0000] [16] [INFO] Booting worker with pid: 16
+[2026-11-13 12:41:17 +0000] [17] [INFO] Booting worker with pid: 17
+[2026-11-13 12:41:41 +0000] [1] [INFO] Handling signal: term
+[2026-11-13 12:41:41 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:41:41 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2026-11-13 12:41:41 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2026-11-13 12:41:41 +0000] [15] [INFO] Worker exiting (pid: 15)
+[2026-11-13 12:41:41 +0000] [14] [INFO] Worker exiting (pid: 14)
+[2026-11-13 12:41:41 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2026-11-13 12:41:41 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2026-11-13 12:41:41 +0000] [13] [INFO] Worker exiting (pid: 13)
+[2026-11-13 12:41:41 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2026-11-13 12:41:41 +0000] [1] [INFO] Shutting down: Master
+[2026-11-13 12:41:41 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:41:41 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:41:41 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:41:41 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:41:41 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-11-13 12:41:41 +0000] [11] [INFO] Booting worker with pid: 11
+[2026-11-13 12:41:41 +0000] [12] [INFO] Booting worker with pid: 12
+[2026-11-13 12:41:41 +0000] [13] [INFO] Booting worker with pid: 13
+[2026-11-13 12:41:41 +0000] [14] [INFO] Booting worker with pid: 14
+[2026-11-13 12:41:41 +0000] [15] [INFO] Booting worker with pid: 15
+[2026-11-13 12:41:41 +0000] [16] [INFO] Booting worker with pid: 16
+[2026-11-13 12:41:41 +0000] [17] [INFO] Booting worker with pid: 17
+[2026-11-13 12:43:09 +0000] [1] [INFO] Handling signal: term
+[2026-11-13 12:43:09 +0000] [14] [INFO] Worker exiting (pid: 14)
+[2026-11-13 12:43:09 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2026-11-13 12:43:09 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:43:09 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2026-11-13 12:43:09 +0000] [13] [INFO] Worker exiting (pid: 13)
+[2026-11-13 12:43:09 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2026-11-13 12:43:09 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2026-11-13 12:43:09 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2026-11-13 12:43:09 +0000] [15] [INFO] Worker exiting (pid: 15)
+[2026-11-13 12:43:09 +0000] [1] [INFO] Shutting down: Master
+[2026-11-13 12:43:09 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:43:09 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:43:09 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:43:09 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:43:09 +0000] [9] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1133, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1063, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/srv/polideportivo/app.py", line 156
+    	if request.args.get("libres") == "1"
+    	                                    ^
+SyntaxError: expected ':'
+[2026-11-13 12:43:09 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:43:09 +0000] [1] [ERROR] Worker (pid:9) exited with code 3
+[2026-11-13 12:43:09 +0000] [1] [ERROR] Shutting down: Master
+[2026-11-13 12:43:09 +0000] [1] [ERROR] Reason: Worker failed to boot.
+[2026-11-13 12:44:10 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:44:10 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:44:10 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:44:10 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:44:10 +0000] [9] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1133, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1063, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/srv/polideportivo/app.py", line 156
+    	if request.args.get("libres") == "1"
+    	                                    ^
+SyntaxError: expected ':'
+[2026-11-13 12:44:10 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:44:10 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-11-13 12:44:10 +0000] [10] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1133, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1063, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/srv/polideportivo/app.py", line 156
+    	if request.args.get("libres") == "1"
+    	                                    ^
+SyntaxError: expected ':'
+[2026-11-13 12:44:10 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2026-11-13 12:44:10 +0000] [1] [ERROR] Worker (pid:9) exited with code 3
+[2026-11-13 12:44:10 +0000] [1] [ERROR] Worker (pid:10) was sent SIGTERM!
+[2026-11-13 12:44:10 +0000] [1] [ERROR] Shutting down: Master
+[2026-11-13 12:44:10 +0000] [1] [ERROR] Reason: Worker failed to boot.
+[2026-11-13 12:47:54 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:47:54 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:47:54 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:47:54 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:47:54 +0000] [9] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1133, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1063, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/srv/polideportivo/app.py", line 156
+    	if request.args.get("libres") == "1"
+    	                                    ^
+SyntaxError: expected ':'
+[2026-11-13 12:47:54 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:47:54 +0000] [1] [ERROR] Worker (pid:9) exited with code 3
+[2026-11-13 12:47:54 +0000] [1] [ERROR] Shutting down: Master
+[2026-11-13 12:47:54 +0000] [1] [ERROR] Reason: Worker failed to boot.
+[2026-11-13 12:48:48 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:48:48 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:48:48 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:48:48 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:48:48 +0000] [9] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1133, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1063, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/srv/polideportivo/app.py", line 157
+    		return pistas = [p for p in PISTAS if p["disponible"]]
+    		              ^
+SyntaxError: invalid syntax
+[2026-11-13 12:48:48 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:48:48 +0000] [1] [ERROR] Worker (pid:9) exited with code 3
+[2026-11-13 12:48:48 +0000] [1] [ERROR] Shutting down: Master
+[2026-11-13 12:48:48 +0000] [1] [ERROR] Reason: Worker failed to boot.
+[2026-11-13 12:50:09 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:50:09 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:50:09 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:50:09 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:50:10 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-11-13 12:50:10 +0000] [11] [INFO] Booting worker with pid: 11
+[2026-11-13 12:50:10 +0000] [12] [INFO] Booting worker with pid: 12
+[2026-11-13 12:50:10 +0000] [13] [INFO] Booting worker with pid: 13
+[2026-11-13 12:50:10 +0000] [14] [INFO] Booting worker with pid: 14
+[2026-11-13 12:50:10 +0000] [15] [INFO] Booting worker with pid: 15
+[2026-11-13 12:50:10 +0000] [16] [INFO] Booting worker with pid: 16
+[2026-11-13 12:50:10 +0000] [17] [INFO] Booting worker with pid: 17
+[2026-11-13 12:50:15 +0000] [1] [INFO] Handling signal: term
+[2026-11-13 12:50:15 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2026-11-13 12:50:15 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2026-11-13 12:50:15 +0000] [13] [INFO] Worker exiting (pid: 13)
+[2026-11-13 12:50:15 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2026-11-13 12:50:15 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:50:15 +0000] [15] [INFO] Worker exiting (pid: 15)
+[2026-11-13 12:50:15 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2026-11-13 12:50:15 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2026-11-13 12:50:15 +0000] [14] [INFO] Worker exiting (pid: 14)
+[2026-11-13 12:50:15 +0000] [1] [INFO] Shutting down: Master
+[2026-11-13 12:50:15 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:50:15 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:50:15 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:50:15 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:50:15 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-11-13 12:50:15 +0000] [11] [INFO] Booting worker with pid: 11
+[2026-11-13 12:50:15 +0000] [12] [INFO] Booting worker with pid: 12
+[2026-11-13 12:50:15 +0000] [13] [INFO] Booting worker with pid: 13
+[2026-11-13 12:50:15 +0000] [14] [INFO] Booting worker with pid: 14
+[2026-11-13 12:50:15 +0000] [15] [INFO] Booting worker with pid: 15
+[2026-11-13 12:50:16 +0000] [16] [INFO] Booting worker with pid: 16
+[2026-11-13 12:50:16 +0000] [17] [INFO] Booting worker with pid: 17
+[2026-11-13 12:50:16,384] ERROR in app: Exception on /api/pistas/2 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/flask/app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'api_pista' did not return a valid response. The function either returned None or ended without a return statement.
+[2026-11-13 12:50:45 +0000] [1] [INFO] Handling signal: term
+[2026-11-13 12:50:45 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2026-11-13 12:50:45 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2026-11-13 12:50:45 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:50:45 +0000] [15] [INFO] Worker exiting (pid: 15)
+[2026-11-13 12:50:45 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2026-11-13 12:50:45 +0000] [13] [INFO] Worker exiting (pid: 13)
+[2026-11-13 12:50:45 +0000] [14] [INFO] Worker exiting (pid: 14)
+[2026-11-13 12:50:45 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2026-11-13 12:50:45 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2026-11-13 12:50:45 +0000] [1] [INFO] Shutting down: Master
+[2026-11-13 12:50:45 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2026-11-13 12:50:45 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-11-13 12:50:45 +0000] [1] [INFO] Using worker: sync
+[2026-11-13 12:50:45 +0000] [9] [INFO] Booting worker with pid: 9
+[2026-11-13 12:50:45 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-11-13 12:50:45 +0000] [11] [INFO] Booting worker with pid: 11
+[2026-11-13 12:50:45 +0000] [12] [INFO] Booting worker with pid: 12
+[2026-11-13 12:50:45 +0000] [13] [INFO] Booting worker with pid: 13
+[2026-11-13 12:50:45 +0000] [14] [INFO] Booting worker with pid: 14
+[2026-11-13 12:50:45 +0000] [15] [INFO] Booting worker with pid: 15
+[2026-11-13 12:50:46 +0000] [16] [INFO] Booting worker with pid: 16
+[2026-11-13 12:50:46 +0000] [17] [INFO] Booting worker with pid: 17
+[2026-11-13 12:58:34 +0000] [1] [INFO] Handling signal: term
+[2026-11-13 12:58:34 +0000] [9] [INFO] Worker exiting (pid: 9)
+[2026-11-13 12:58:34 +0000] [15] [INFO] Worker exiting (pid: 15)
+[2026-11-13 12:58:34 +0000] [12] [INFO] Worker exiting (pid: 12)
+[2026-11-13 12:58:34 +0000] [10] [INFO] Worker exiting (pid: 10)
+[2026-11-13 12:58:34 +0000] [11] [INFO] Worker exiting (pid: 11)
+[2026-11-13 12:58:34 +0000] [16] [INFO] Worker exiting (pid: 16)
+[2026-11-13 12:58:34 +0000] [14] [INFO] Worker exiting (pid: 14)
+[2026-11-13 12:58:34 +0000] [13] [INFO] Worker exiting (pid: 13)
+[2026-11-13 12:58:34 +0000] [17] [INFO] Worker exiting (pid: 17)
+[2026-11-13 12:58:35 +0000] [1] [INFO] Shutting down: Master
