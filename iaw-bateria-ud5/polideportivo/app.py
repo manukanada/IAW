@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # 👀 4.4 La llave de las sesiones está escrita aquí, en el código (y el código acaba en Git).
 #        Que salga del entorno: la variable SECRET_KEY de config/polideportivo.env.
-app.secret_key = "polideportivo"
+app.secret_key = os.environ["SECRET_KEY"]
 
 # 👀 Detrás de Nginx: fiarse de UNA capa de X-Forwarded-For y X-Forwarded-Proto (las que pone nuestro Nginx)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)
@@ -141,8 +141,10 @@ def salir():
 
 @app.route("/admin")
 def admin():
+	if "usuario" not in session:
+		return redirect(url_for("entrar"))
 	# 👀 4.2 Solo para el conserje: sin sesión, a la página de entrar. Ahora entra cualquiera.
-	filas = [dict(r, pista=buscar_pista(r["pista"])["nombre"]) for r in RESERVAS]
+		filas = [dict(r, pista=buscar_pista(r["pista"])["nombre"]) for r in RESERVAS]
 	return render_template("admin.html", usuario=session.get("usuario", "??"), reservas=filas)
 
 

@@ -5,7 +5,7 @@
 1.c =405
 1.d =502
 # Bloque 4 · Responde: sí o no.
-4.a =
-4.b =
-4.c =
-4.d =
+4.a =sí
+4.b =no
+4.c =no
+4.d =no
