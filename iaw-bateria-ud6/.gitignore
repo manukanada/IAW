@@ -1,0 +1,6 @@
+logs/*
+!logs/.gitkeep
+copias/*
+!copias/.gitkeep
+__pycache__/
+servidor/inventario.env
