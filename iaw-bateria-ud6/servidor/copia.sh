@@ -5,17 +5,17 @@
 set -e
 
 # ✍️ Paso 1 · Carga las variables de /srv/servidor/inventario.env (con el punto: . fichero). Así tienes $DB_HOST, $DB_USER…
-
+. /srv/servidor/inventario.env
 
 # ✍️ Paso 2 · Una variable FECHA con la fecha y la hora: 20261123-033000 (date +%Y%m%d-%H%M%S)
-
+FECHA=$(date +%Y%m%d-%H%M%S)
 
 # ✍️ Paso 3 · La copia con mysqldump, con los datos de inventario.env, en /copias/inventario-$FECHA.sql
 #        Opciones: --single-transaction (una foto coherente sin bloquear la web) y --no-tablespaces.
 #        Ojo: -p"$DB_PASS" va PEGADO, sin espacio.
-
+mysqldump -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASS" --single-transaction --no-tablespaces inventario > /copias/inventario-$FECHA.sql
 
 # ✍️ Paso 4 · Borra las copias de más de 7 días: find /copias -name 'inventario-*.sql' -mtime +7 …
-
+find /copias -name 'inventario-*.sql' -mtime +7 -delete
 
 echo "Copia hecha: /copias/inventario-$FECHA.sql"

@@ -7,5 +7,5 @@
 # Bloque 3 y bloque 4 · Responde: sí o no.
 3.a =no
 3.b =sí
-4.a =
-4.b =
+4.a =no
+4.b =sí
