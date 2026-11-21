@@ -8,8 +8,9 @@ $aula = $_GET['aula'] ?? '';
 $pdo  = conectar();
 // ⚠️ ASÍ VIENE: lo que escribe el usuario se PEGA dentro del SQL → inyección SQL.
 // ✍️ 3.1 Consulta preparada, como en equipo.php: el SQL con un ? en lugar de '$aula', y el dato en execute([…]).
-$sql       = "SELECT codigo, tipo, aula, estado FROM equipos WHERE aula = '$aula' ORDER BY codigo";
-$resultado = $pdo->query($sql)->fetchAll();
+$sql       = $pdo->prepare("SELECT codigo, tipo, aula, estado FROM equipos WHERE aula = ? ORDER BY codigo");
+$sql->execute([$aula]);
+$resultado = $sql->fetchAll();
 ?>
 <h2>Buscar por aula</h2>
 <form><input name="aula" value="<?= e($aula) ?>" placeholder="A12"> <button>Buscar</button></form>
