@@ -9,8 +9,11 @@ GRANT SELECT ON radio.* TO 'radio_copias'@'%';
 -- ✍️ C1.1 · El usuario de la web y de la API: radio_web, con una contraseña larga (la tuya).
 --          La web y la API solo LEEN la parrilla y los podcasts: los permisos justos, solo en la base radio.
 --          La web y la API están en OTROS ordenadores (php, app), no en el de la base de datos.
+DROP USER IF EXISTS 'radio_web'@'%';
+CREATE USER 'radio_web'@'%' IDENTIFIED BY 'asir-2026';
+GRANT SELECT ON radio.* TO 'radio_web'@'%';
 
 
 -- ✍️ C1.2 · root solo puede entrar desde el propio servidor de la base de datos.
-
+DROP USER IF EXISTS 'root'@'%';
 
