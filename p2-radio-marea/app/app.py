@@ -36,7 +36,7 @@ def conectar():
 # ✍️ C3 · Los podcasts de la tabla podcasts, del más nuevo al más viejo, con id, titulo, programa y minutos.
 #         Si buscar no está vacío, solo los que lo llevan en el título (LIKE). Lo escribe el oyente: consulta preparada.
 def leer_podcasts(buscar=""):
-    return [p for p in PODCASTS_DE_PRUEBA if buscar.lower() in p["titulo"].lower()]
+    cur.execute("SELECT id, titulo, programa, minutos FROM podcasts WHERE titulo LIKE %s ORDER BY fecha DESC", ("%" + buscar + "%",))
 
 
 @app.route("/api/salud")
